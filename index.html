@@ -56,6 +56,11 @@
       var topo = L.tileLayer.provider('Hydda.Full');
       topo.addTo(mapa); 
 	    
+	     <!-- Referencia al complemento Leaflet-providers -->	 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.1.7/leaflet-providers.js"></script>
+	    var terrain = L.tileLayer.provider('Hydda.Full');
+      terrain.addTo(mapa);
+	    
       // retorna un color con base en la cantidad de pobladores
       function color(d) {
 	      return d > 250000 ? '#67000d' :
@@ -96,7 +101,9 @@
       var baseLayers = {
 	      "OpenStreetMap": osm,
 	      "Stamen Watercolor" : sta,
-	      "OpenTopoMap" : topo
+	      "OpenTopoMap" : topo,
+	      "OpenTopoMap" : topo,
+	      "Hydda.Full" : terrain,
       };
       
       var overlays = {
